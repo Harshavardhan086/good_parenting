@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
+
+    logger.debug("user-controller- ")
+    @minor_for_user = Minor.where(user_id: current_user.id)
   end
   
   def new
@@ -20,5 +23,5 @@ class UsersController < ApplicationController
   end
 
 
-  
+
 end
