@@ -6,7 +6,7 @@ class CreateMinors < ActiveRecord::Migration[5.0]
       t.string :last_name
       t.string :minor_email
       t.integer :phone
-      
+      t.string :activation_token
       t.timestamps
     end
   end

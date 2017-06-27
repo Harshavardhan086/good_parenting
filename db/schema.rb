@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624201233) do
+ActiveRecord::Schema.define(version: 20170626205352) do
+
+  create_table "minor_devices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "minor_id"
+    t.string   "uuid"
+    t.string   "end_point_arn"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "minors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "user_id"
@@ -18,8 +26,9 @@ ActiveRecord::Schema.define(version: 20170624201233) do
     t.string   "last_name"
     t.string   "minor_email"
     t.integer  "phone"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "activation_token"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170624201233) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
+    t.string   "api_token"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

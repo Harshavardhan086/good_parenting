@@ -1,0 +1,2 @@
+class MinorDevice < ApplicationRecord
+end
