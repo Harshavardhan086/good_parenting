@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-This an application helps parents to track their child's activities
+This an application helps parents to track their child's activities. Parents can track
